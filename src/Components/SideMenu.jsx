@@ -11,6 +11,7 @@ class SidebarMenu extends Component {
     }
   }
   changeIndex(index) {
+    this.props.showMenu()
     this.setState(() => ({
       activeindex: index
     }))
@@ -41,14 +42,14 @@ class SidebarMenu extends Component {
           key={service.url}
           color={color}
         >
-          <Button color={color}>{service.method}</Button>
-          <strong style={{ fontSize: 17 }}>{service.url}</strong>
+          <Button color={color} inverted>{service.method}</Button>
+          <strong style={{ fontSize: 15 }}>{service.url}</strong>
           {service.protected ? <Icon size="large" name="lock" /> : null}
         </Menu.Item>
       )
     })
     return (
-      <Sidebar.Pushable as={Segment} attached="top">
+      <Sidebar.Pushable as={Segment} attached="top" style={{ transform: 'translateY(-15px)' }}>
         <Sidebar as={Menu} animation="uncover" width="very wide" visible={visible} vertical inverted>
           {menuitems}
         </Sidebar>

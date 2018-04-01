@@ -4,7 +4,7 @@ import { Container, Header, Message } from 'semantic-ui-react'
 import JsonHighlight from './JsonHighlight'
 
 const subtitleStyle = {
-  color: '#667EDC',
+  color: '#667EE5',
   textDecoration: 'underline',
   fontWeight: 'bold'
 }
@@ -14,7 +14,7 @@ const Content = ({ baseurl, service }) => {
   if (service.request !== null) {
     request = (
       <Container>
-        <Header style={subtitleStyle} as="h3">Ejemplo Request:</Header>
+        <Header style={subtitleStyle} as="h3">Ejemplo Petición:</Header>
         <JsonHighlight obj={service.request} />
       </Container>
     )
@@ -36,7 +36,8 @@ const Content = ({ baseurl, service }) => {
     </Message>
   ))
   return (
-    <Container>
+    <Container className="content">
+      <br />
       <Header as="h1" textAlign="center">{service.title}</Header>
       <p>{service.description}</p>
       <Header style={subtitleStyle} as="h3">Tipo:</Header>

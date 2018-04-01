@@ -24,7 +24,7 @@ class Container extends Component {
   }
   loadJson() {
     const version = Math.random().toString()
-    const url = `./api.json?ver='${version}`
+    const url = `./api.json?${version}`
     axios.get(url)
       .then((res) => {
         this.setState(() => ({ request: res.data }))
@@ -48,6 +48,7 @@ class Container extends Component {
             baseurl={baseurl}
             services={services}
             visible={this.state.showMenu}
+            showMenu={this.handleMenu}
           />
         </Fragment>
       )
