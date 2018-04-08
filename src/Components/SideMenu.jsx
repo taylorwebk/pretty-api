@@ -39,7 +39,7 @@ class SidebarMenu extends Component {
       return (
         <Menu.Item
           onClick={() => { this.changeIndex(index) }}
-          key={service.url}
+          key={service.url + service.method}
           color={color}
         >
           <Button color={color} inverted>{service.method}</Button>
